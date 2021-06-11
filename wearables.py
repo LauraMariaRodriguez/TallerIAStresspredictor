@@ -2,7 +2,7 @@ import joblib
 import math
 import pandas as pd
 
-rf = joblib.load("models/rf.pkl")  #Cargamos el random forest
+GBC = joblib.load("models/GBC.pkl")  #Cargamos el random forest
 
 meanVal = joblib.load("data/meanVal.pkl")  #Cargamos los valores medios
 meanVal = pd.DataFrame(meanVal)
@@ -170,7 +170,7 @@ if st.button('Predict'):
 			st.write('''
 			## Results 🔍 
 			''')
-			nStress = int(rf.predict(val))
+			nStress = int(GBC.predict(val))
 			if nStress < 3:
 				st.text("Estres bajo")
 			elif nStress <5:
