@@ -159,7 +159,7 @@ def update():
 	val.meditation = 1 if state == "Meditando" else 0
 	
 			
-modelo = left.selectbox("Modelo de predicción",("Random Forest","Gradiente Boost", "Linear Regression","Árbol de Decisión"))
+modelo = left.selectbox("Modelo de predicción",("Random Forest","Gradiente Boost", "Regresion Lineal","Árbol de Decisión"))
 
 
 if modelo == 'Random Forest':
@@ -168,8 +168,8 @@ if modelo == 'Random Forest':
 elif modelo == 'Gradiente Boost':
 	st.text('Grandient Boost')
 	nStress = int(GBC.predict(val))
-elif modelo == 'Linear Regression':
-	st.text('Linear Regression')
+elif modelo == 'Regresion Lineal':
+	st.text('Regresion Lineal')
 	nStress = int(lr.predict(val))
 elif modelo == 'Árbol de Decisión':
 	st.text('Árbol de Decisión')
