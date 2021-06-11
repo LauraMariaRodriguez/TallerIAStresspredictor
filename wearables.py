@@ -2,6 +2,9 @@ import joblib
 import math
 import pandas as pd
 
+rf = joblib.load("models/rf.pkl")  #Cargamos el Gradiente Boost
+dt = joblib.load("models/dt.pkl")  #Cargamos el Gradiente Boost
+lr = joblib.load("models/lr.pkl")  #Cargamos el Gradiente Boost
 GBC = joblib.load("models/GBC.pkl")  #Cargamos el Gradiente Boost
 
 meanVal = joblib.load("data/meanVal.pkl")  #Cargamos los valores medios
@@ -163,14 +166,46 @@ def update():
 	val.amusement = 1 if state == "Emocionado" else 0
 	val.stress = 1 if state == "Estresado" else 0
 	val.meditation = 1 if state == "Meditando" else 0
+	
+modelo = left.selectbox("Modelo de predicción",("Random Forest","AdaBosst", "Linear Regression","Árbol de Decisión"))
 
-if st.button('Predict'):
+
+elif modelo == 'Random Forest':
+	st.text('Random Forest')
+	nStress = int(rf.predict(val))
+elif modelo == 'Gradiente Boost':
+	st.text('Grandient Boost')
+	nStress = int(GBC.predict(val))
+elif modelo == 'Linear Regression':
+	st.text('Linear Regression')
+	nStress = int(lr.predict(val))
+if modelo == 'Árbol de Decisión':
+	st.text('Árbol de Decisión')
+	nStress = int(dt.predict(val))
+else:
+	st.text('error')	
+
+if st.button('Consultar'):
+			update()
+			
+			prediction = dt.predict(val)
+		
+	
+			st.write('Results 🔍')
+		
+			st.text(nStress)
+			if nStress < 3:
+				st.text("Estres muy por debajo de lo normal")
+			elif nStress <5:
+				st.text("Nivel de estres normal")
+			else:
+				st.text("Nivel de estres alto, Alarma")
+if st.button('Predecir'):
 			update()
 			
 			st.write('''
-			## Results 🔍 
+			## Resultado 🔍 
 			''')
-			nStress = int(GBC.predict(val))
 			if nStress < 3:
 				st.text("Estres bajo")
 			elif nStress <5:
