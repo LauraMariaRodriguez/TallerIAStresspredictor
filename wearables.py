@@ -170,7 +170,7 @@ def update():
 modelo = left.selectbox("Modelo de predicción",("Random Forest","AdaBosst", "Linear Regression","Árbol de Decisión"))
 
 
-elif modelo == 'Random Forest':
+if modelo == 'Random Forest':
 	st.text('Random Forest')
 	nStress = int(rf.predict(val))
 elif modelo == 'Gradiente Boost':
@@ -179,7 +179,7 @@ elif modelo == 'Gradiente Boost':
 elif modelo == 'Linear Regression':
 	st.text('Linear Regression')
 	nStress = int(lr.predict(val))
-if modelo == 'Árbol de Decisión':
+elif modelo == 'Árbol de Decisión':
 	st.text('Árbol de Decisión')
 	nStress = int(dt.predict(val))
 else:
