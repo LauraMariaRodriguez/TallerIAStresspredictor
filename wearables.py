@@ -199,4 +199,4 @@ if st.button('Predecir'):
 				st.text("Nivel de estres normal")
 			else:
 				st.text("Nivel de estres alto, deberias relajarte")
-			st.components.v1.html(stress_o_meter(nStress))
+			st.components.v1.html(stress_o_meter2(nStress))
