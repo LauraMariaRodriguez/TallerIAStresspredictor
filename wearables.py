@@ -152,7 +152,21 @@ with st.beta_expander("Configuración avanzada	(Permite acceder a todas las vari
 		if i not in sc:
 			addSli(i,i,col3)
 			
+
+def update():
+
+	val.hrv_MEAN_RR = hrv_MEAN_RR
+
+	for i in sliders:
+		val[i[0]] = i[1]
+
+
+	val.baseline = 1 if state == "Normal" else 0
+	val.amusement = 1 if state == "Emocionado" else 0
+	val.stress = 1 if state == "Estresado" else 0
+	val.meditation = 1 if state == "Meditando" else 0
 	
+			
 modelo = left.selectbox("Modelo de predicción",("Random Forest","Gradiente Boost", "Linear Regression","Árbol de Decisión"))
 
 
@@ -170,20 +184,6 @@ elif modelo == 'Árbol de Decisión':
 	nStress = int(dt.predict(val))
 else:
 	st.text('error')
-	
-
-def update():
-
-	val.hrv_MEAN_RR = hrv_MEAN_RR
-
-	for i in sliders:
-		val[i[0]] = i[1]
-
-
-	val.baseline = 1 if state == "Normal" else 0
-	val.amusement = 1 if state == "Emocionado" else 0
-	val.stress = 1 if state == "Estresado" else 0
-	val.meditation = 1 if state == "Meditando" else 0
 	
 
 
