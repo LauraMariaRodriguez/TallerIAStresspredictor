@@ -177,7 +177,22 @@ elif modelo == 'Árbol de Decisión':
 else:
 	st.text('error')
 	
+modelo = left.selectbox("Modelo de predicción",("Árbol de Decisión","Random Forest", "Linear Regression", "AdaBosst"))
 
+if modelo == 'Árbol de Decisión':
+	st.text('Árbol de Decisión')
+	nStress = int(dt.predict(val))
+elif modelo == 'Random Forest':
+	st.text('Random Forest')
+	nStress = int(rf.predict(val))
+elif modelo == 'Linear Regression':
+	st.text('Linear Regression')
+	nStress = int(lr.predict(val))
+elif modelo == 'AdaBosst':
+	st.text('AdaBosst')
+	nStress = int(ab.predict(val))
+else:
+	st.text('error')	
 
 if st.button('Predecir'):
 			update()
