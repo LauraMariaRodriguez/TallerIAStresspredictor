@@ -134,7 +134,7 @@ left.markdown(
 sc = ["hrv_MEAN_RR", "eda_MEAN", "baseline", "meditation", "stress", "amusement"]   #special cases
 
 center = st.beta_columns((1,2,1))
-state = left[1].selectbox("Situación actual",("Normal","Emocionado", "Estresado", "Meditando"))
+state = center[1].selectbox("Situación actual",("Normal","Emocionado", "Estresado", "Meditando"))
 
 with st.beta_expander("Configuración avanzada	(Permite acceder a todas las variables del modelo)"):
 	col1, col2, col3 = st.beta_columns(3)
@@ -167,7 +167,7 @@ def update():
 	val.meditation = 1 if state == "Meditando" else 0
 	
 			
-modelo = left[2].selectbox("Modelo de predicción",("Random Forest","Gradiente Boost", "Linear Regression","Árbol de Decisión"))
+modelo = left.selectbox("Modelo de predicción",("Random Forest","Gradiente Boost", "Linear Regression","Árbol de Decisión"))
 
 
 if modelo == 'Random Forest':
