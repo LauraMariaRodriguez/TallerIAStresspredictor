@@ -2,7 +2,7 @@ import joblib
 import math
 import pandas as pd
 
-GBC = joblib.load("models/rf.pkl")  #Cargamos el random forest
+GBC = joblib.load("models/GBC.pkl")  #Cargamos el Gradiente Boost
 
 meanVal = joblib.load("data/meanVal.pkl")  #Cargamos los valores medios
 meanVal = pd.DataFrame(meanVal)
