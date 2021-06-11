@@ -1,3 +1,7 @@
+import joblib
+import math
+import pandas as pd
+
 rf = joblib.load("models/rf.pkl")  #Cargamos el Gradiente Boost
 dt = joblib.load("models/dt.pkl")  #Cargamos el Gradiente Boost
 lr = joblib.load("models/lr.pkl")  #Cargamos el Gradiente Boost
@@ -188,4 +192,5 @@ if st.button('Predecir'):
 				st.text("Nivel de estres alto, deberias relajarte")
 			st.components.v1.html(stress_o_meter2(nStress))
 			
+
 
