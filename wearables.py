@@ -66,13 +66,9 @@ st.markdown(
 
 
 
-st.markdown(
-	'''
-	<img src = 'https://saturdays.ai/wp-content/uploads/2021/01/logo.png' style = 'height : 10vh; position : absolute; right : 0; top : 8vh; margin : 0'>
-	''', 
-	unsafe_allow_html=True)
 
-st.title("Stress wearables")
+
+st.title("Taller IA: Predictor de estrés")
 
 def rr_to_hb(rr):
 	rr = 1/rr
@@ -167,7 +163,7 @@ def update():
 	val.meditation = 1 if state == "Meditando" else 0
 	
 			
-modelo = left.selectbox("Modelo de predicción",("Random Forest","Gradiente Boost", "Linear Regression","Árbol de Decisión"))
+modelo = center.selectbox("Modelo de predicción",("Random Forest","Gradiente Boost", "Linear Regression","Árbol de Decisión"))
 
 
 if modelo == 'Random Forest':
