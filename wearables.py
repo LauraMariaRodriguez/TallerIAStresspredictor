@@ -69,6 +69,8 @@ st.markdown(
 
 
 st.title("Taller IA: Predictor de estrés")
+st.header("Laura Rodríguez y Harold Ruiz")
+
 
 def rr_to_hb(rr):
 	rr = 1/rr
@@ -119,12 +121,6 @@ def addSli(var, text, place = None):
 			])
 
 addSli("eda_MEAN", "Actividad electrodermica media", left)
-left.markdown(
-	'''<center>
-		<img src ='https://live.staticflickr.com/7068/6949070181_592e6b60fd_b.jpg' style = 'width : 40%;'> <br> 
-		Image by: <a href = 'https://search.creativecommons.org/photos/fc29cf47-bfc5-4ea4-832e-36d8c58b5de6'>Nikki Pugh</a>
-	</center''', 
-	unsafe_allow_html=True)
 
 
 sc = ["hrv_MEAN_RR", "eda_MEAN", "baseline", "meditation", "stress", "amusement"]   #special cases
