@@ -22,7 +22,7 @@ val = pd.DataFrame(val)
 import streamlit as st
 
 
-def stress_o_meter(level):
+def stress_o_meter2(level):
 	return '''<style type="text/css">
 			#arrow{
 				position: relative;
@@ -37,7 +37,7 @@ def stress_o_meter(level):
 		</style>
 		<center>
 		<div>
-			<img src="https://drive.google.com/uc?export=view&id=1tzzDAZxoFpzsEIWfdH6dfetcyeE0TdAV" id="level">
+			<img src="https://i.ibb.co/nCKKMH9/sem.png" id="level">
 			<br>
 			<img src="https://drive.google.com/uc?export=view&id=1XmIuIxpmMRjw3Xf6e9AqO7pgrMx274w_" id="arrow">
 		</div>
