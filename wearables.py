@@ -2,20 +2,20 @@ import joblib
 import math
 import pandas as pd
 
-dt = joblib.load("dt.pkl")  #Cargamos el arbol de decision
-rf = joblib.load("rf.pkl")  #Cargamos el random forest
-lr  = joblib.load("lr.pkl")  #Cargamos la linear regresion
-ab = joblib.load("ab.pkl")  #Cargamos Adaboost 
+dt = joblib.load("models/dt.pkl")  #Cargamos el arbol de decision
+rf = joblib.load("models/rf.pkl")  #Cargamos el random forest
+lr  = joblib.load("models/lr.pkl")  #Cargamos la linear regresion
+ab = joblib.load("models/GCB.pkl")  #Cargamos Adaboost 
 
-meanVal = joblib.load("meanVal.pkl")  #Cargamos los valores medios
+meanVal = joblib.load("data/meanVal.pkl")  #Cargamos los valores medios
 meanVal = pd.DataFrame(meanVal)
-maxVal = joblib.load("maxVal.pkl")  #Cargamos los valores máximos
+maxVal = joblib.load("data/maxVal.pkl")  #Cargamos los valores máximos
 maxVal = pd.DataFrame(maxVal)
-minVal = joblib.load("minVal.pkl")  #Cargamos los valores mínimos
+minVal = joblib.load("data/minVal.pkl")  #Cargamos los valores mínimos
 minVal = pd.DataFrame(minVal)
-corr = joblib.load("correlations.pkl")
+corr = joblib.load("data/correlations.pkl")
 corr = dict(zip(meanVal.columns, corr))
-val = joblib.load("meanVal.pkl") 
+val = joblib.load("data/meanVal.pkl") 
 val = pd.DataFrame(val)
 
 
