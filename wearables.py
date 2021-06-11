@@ -167,7 +167,7 @@ def update():
 	val.meditation = 1 if state == "Meditando" else 0
 	
 			
-modelo = left.selectbox("Modelo de predicción",("Random Forest","Gradiente Boost", "Linear Regression","Árbol de Decisión"))
+modelo = center[2].selectbox("Modelo de predicción",("Random Forest","Gradiente Boost", "Linear Regression","Árbol de Decisión"))
 
 
 if modelo == 'Random Forest':
