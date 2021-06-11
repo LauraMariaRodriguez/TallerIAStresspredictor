@@ -5,7 +5,7 @@ import pandas as pd
 dt = joblib.load("models/dt.pkl")  #Cargamos el arbol de decision
 rf = joblib.load("models/rf.pkl")  #Cargamos el random forest
 lr  = joblib.load("models/lr.pkl")  #Cargamos la linear regresion
-ab = joblib.load("models/GCB.pkl")  #Cargamos Adaboost 
+ab = joblib.load("models/GBC.pkl")  #Cargamos Adaboost 
 
 meanVal = joblib.load("data/meanVal.pkl")  #Cargamos los valores medios
 meanVal = pd.DataFrame(meanVal)
