@@ -207,3 +207,19 @@ if st.button('Predecir'):
 			else:
 				st.text("Nivel de estres alto, deberias relajarte")
 			st.components.v1.html(stress_o_meter2(nStress))
+			
+			if st.button('Consultar Nivel'):
+			update()
+			
+			prediction = lr.predict(val)
+		
+	
+			st.write('Results 🔍')
+		
+			st.text(nStress)
+			if nStress < 3:
+				st.text("Estres muy por debajo de lo normal")
+			elif nStress <5:
+				st.text("Nivel de estres normal")
+			else:
+				st.text("Nivel de estres alto, Alarma")
